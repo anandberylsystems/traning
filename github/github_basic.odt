@@ -60,3 +60,40 @@ git pull
 git status = to check status from staging server
 
 
+
+
+..................................................................
+
+how to see the branches in github?
+ 
+git branch
+
+how to create new branch in github?
+ Git checkout -b branchname
+
+how to push new changes into new branch?
+
+Git push origin newbranchname
+
+
+how to see branch remotely
+ git branch
+
+how to see branch locally
+
+git branch -r
+
+how to switch to another branch
+
+git checkout branchname
+
+delte branch locally
+
+git push origin - - D BRANCHNAME
+
+how to delte branch remotely
+
+git push origin - - delete branchname
+
+
+
