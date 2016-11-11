@@ -1,0 +1,134 @@
+﻿
+RDBMS
+   A Relational database management system (RDBMS) is a database management system (DBMS) that is based on the relational model as introduced by E. F. Codd.
+
+What is table?
+The table is a collection of related data entries and it consists of columns and rows.
+
+What is field?
+Every table is broken up into smaller entities called fields
+
+A record, also called a row of data, is each individual entry that exists in a table
+
+A column is a vertical entity in a table that contains all information associated with a specific field in a table.
+
+
+Sql constraints =
+   
+not null- it ensure that a column can not have null values
+
+default -Provides a default value for a column when none is specified.
+
+UNIQUE Constraint: Ensures that all values in a column are different.
+
+PRIMARY Key: Uniquely identified each rows/records in a database table.
+
+FOREIGN Key: Uniquely identified a rows/records in any another database table.
+
+CHECK Constraint: The CHECK constraint ensures that all values in a column satisfy certain conditions. 
+
+
+Database Normalization
+Eliminating redundant data, for example, storing the same data in more than one tables.
+Ensuring data dependencies make sense.
+
+
+Important functions:=
+ upper(FIRST_NAME) – gives the first name column value in upper case.
+lower(LAST_NAME) – gives the last name column value in lower case
+distict(COLUMN_NAME) – it gives the unique value of column. No duplicates value.
+SUBSTRING(str, from postion, how manylenth)- it converts into substring
+             ex- select SUBSTRING(first_name,1,3) = it ll gives the first three charcter of first name    column.
+LOCATE (search str, str, [position])
+  search str – a string which will be search for
+str - a string which is going to be searched
+position – from where the position wil start for searching
+
+RTRIM(first_name) – removes right spaces from first name column
+LTRIM(last_name) – removes left spaces from first name column
+LENGTH (str) = returns the length of a given string.
+
+REPLACE(str, find_string, replace_with) = replaces all the occurrences of a substring within a string.
+
+   Ex= SELECT pub_city,country,
+    -> REPLACE(country,'K','SA') 
+    -> FROM publisher 
+    -> WHERE country='UK';
+
+concat(string1,string2,string3,..) = concat multiple string 
+  ex – select (first_name,'and',lastname) as name from employee;
+
+ADDDATE('2016-05-15',INTERVAL 10 DAY) = RESULT WIL BE 2016-05-25
+EX- SELECT ADDDATE('2016-05-15',INTERVAL OF 10 DAY) AS REQUIRED_DATE
+
+SELECT CURDATE() = RETURNS CURRENT DATE DEPENDS ON SYSTEM DATE
+SELECT CURRENT_DATE; = RETURNS CURRENT DATE DEPEND ON SYSTEM DATE
+SELECT CURRENT_TIME; = RETURNS CURRENT TIME
+SELECT CURRENT_TIMESTAMP; = RETURN Date + time in format of YYYY-MM-DD HH:MM:SS
+NOW(); = RETURNS DATE+ TIME SAME AS CURRENT_TIMESTAMP
+
+DATE_FORMAT(DATE,FORMAT)
+ EX- DATE_FORMAT(2016-10-31,'%Y') = 2016
+
+%D
+Day of the month with English suffix (0th, 1st, 2nd, 3rd, …)
+
+%d
+Day of the month, numeric (00..31)
+
+%H
+Hour (00..23)
+
+%h
+Hour (01..12)
+
+%i
+Minutes, numeric (00..59)
+
+%M
+Month name (January..December)
+
+%m
+Month, numeric (00..12)
+
+%p
+AM or PM
+
+%r
+Time, 12-hour (hh:mm:ss followed by AM or PM)
+
+%S
+Seconds (00..59)
+
+%s
+Seconds (00..59)
+
+%W
+Weekday name (Sunday..Saturday)
+
+%w
+Day of the week (0=Sunday..6=Saturday)
+
+%Y
+Year, numeric, four digits
+
+%y
+Year, numeric (two digits)
+
+
+Wild cards
+select * from employee where first_name like'%j' === returns nam start with j
+select * from employee where first_name like '%k%'; == returns name containg k
+selct * from employee where name like 'j---' = returns name which start with j and has 4 chacrter
+select * from employee where name like '[abc]%' = returns name which start with ab c
+select * from employee where name like '[!abc]%' = returns name which not start with a b or c
+select * from employee where name IN ('john','annd');
+select * from employee where salry BETWEEN 500 AND 1000
+select * from employee order by city ,salry;
+
+
+
+
+
+
+
