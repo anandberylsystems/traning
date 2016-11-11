@@ -1,0 +1,23 @@
+﻿NANO COMMAND:
+   nano /path/to/filename   := IT WILL CREATE A NEW FILE OR OPEN AN EXISTING FILE
+
+AT THE TOP IT SHOWS VERSION NUMBER AND FILE
+
+F3 = SAVE FILE WITHOUT EXITING
+
+ctrl + x = if any changes made then it will ask yes/no
+
+^ stand for CTRL
+M- stands for ALT
+
+
+CONNECTION BETWEEN TWO SYSTEM IN LOCAL AREA NETWORK
+
+ping 192.168.x.x = it will give result if connection can be made otherwise it will give message timeout.
+
+Ssh hostname@ip_address_of_host_name =to make connection with that host
+
+after entring pswd of that host it will give complete access of that system.
+
+ Exit to move back to own system
+
