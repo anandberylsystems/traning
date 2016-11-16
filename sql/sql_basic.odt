@@ -620,3 +620,498 @@ library=# select current_date-dob as time from student;
  8308
  8268
 (4 rows)
+
+
+................................................................................
+
+status for 16 nov 2016
+
+library=# \d
+                List of relations
+ Schema |        Name         | Type  |  Owner   
+--------+---------------------+-------+----------
+ public | book_details        | table | postgres
+ public | borrower_details    | table | postgres
+ public | department          | table | postgres
+ public | publication_details | table | postgres
+ public | staff_details       | table | postgres
+ public | student             | table | postgres
+(6 rows)
+
+library=# select * from book_details;
+
+
+ isbn |          title           | language | pub_id | actual_copy | current_copy | dept_id 
+------+--------------------------+----------+--------+-------------+--------------+---------
+    1 | head first               | english  |      1 |          20 |           15 |       1
+    2 | concept of c             | english  |      2 |          40 |           10 |       1
+    3 | java by e bala guruswami | english  |      1 |          40 |           10 |       1
+    4 | introduction of database | english  |      3 |          50 |           20 |       1
+(4 rows)
+
+
+library=# select * from department;
+ dept_id | dept_name 
+---------+-----------
+       1 | cse
+       2 | it
+       3 | ece
+       4 | eee
+       5 | me
+       6 | civil
+(6 rows)
+
+
+
+library=# insert into book_details values(5,'concept of physics','english',1,80,40,5);
+INSERT 0 1
+library=# insert into book_details values(6,'circuit design','english',2,70,30,4);
+INSERT 0 1
+library=# insert into book_details values(7,'data structure by baluja','english',2,70,30,1);
+INSERT 0 1
+library=# insert into book_details values(8,'NAAS','english',3,70,30,3);
+INSERT 0 1
+library=# insert into book_details values(9,'math 3 b','english',3,70,30,3);
+INSERT 0 1
+library=# delete from book_details where isbn=9;
+DELETE 1
+library=# select * from book_details ;
+ isbn |          title           | language | pub_id | actual_copy | current_copy | dept_id 
+------+--------------------------+----------+--------+-------------+--------------+---------
+    1 | head first               | english  |      1 |          20 |           15 |       1
+    2 | concept of c             | english  |      2 |          40 |           10 |       1
+    3 | java by e bala guruswami | english  |      1 |          40 |           10 |       1
+    4 | introduction of database | english  |      3 |          50 |           20 |       1
+    5 | concept of physics       | english  |      1 |          80 |           40 |       5
+    6 | circuit design           | english  |      2 |          70 |           30 |       4
+    7 | data structure by baluja | english  |      2 |          70 |           30 |       1
+    8 | NAAS                     | english  |      3 |          70 | 30 |       3
+
+(8 rows)
+
+
+
+
+                      ^
+library=# select * from student;
+ st_id  |    st_name    |  sex   |    dob     | dept_name |  contact   
+--------+---------------+--------+------------+-----------+------------
+ cse101 | garima kumari | female | 1994-12-10 | cse       | 9431587963
+ cse102 | aman gautam   | male   | 1994-01-10 | cse       |  966395746
+ IT101  | aryan kr      | male   | 1994-02-16 | IT        | 9568324658
+ cse103 | anand kr      | male   | 1994-03-28 | cse       | 9555114655
+(4 rows)
+
+
+
+library=# insert into student values('cse104','ganesh jee','male',1995-jan-31,'cse',7289903292);
+
+                                                             ^
+library=# insert into student values('cse104','ganesh jee','male','1995-jan-31','cse',7289903292);
+INSERT 0 1
+library=# insert into student values('cse104','sneha','female','1993-feb-26','eee',8271831014);
+
+library=# insert into student values('eee101','sneha','female','1993-feb-26','eee',8271831014);
+INSERT 0 1
+library=# insert into student values('ece','ankit raj','male','1992-mar-13','ece',8271831014);
+INSERT 0 1
+library=# insert into student values('me101','jivesh verma','male','1992-apr-15','ece',7503364998);
+INSERT 0 1
+library=# update student set st_id='ece101' where st_name='ankit raj';
+UPDATE 1
+library=# select * from student;
+ st_id  |    st_name    |  sex   |    dob     | dept_name |  contact   
+--------+---------------+--------+------------+-----------+------------
+ cse101 | garima kumari | female | 1994-12-10 | cse       | 9431587963
+ cse102 | aman gautam   | male   | 1994-01-10 | cse       |  966395746
+ IT101  | aryan kr      | male   | 1994-02-16 | IT        | 9568324658
+ cse103 | anand kr      | male   | 1994-03-28 | cse       | 9555114655
+ cse104 | ganesh jee    | male   | 1995-01-31 | cse       | 7289903292
+ eee101 | sneha         | female | 1993-02-26 | eee       | 8271831014
+ me101  | jivesh verma  | male   | 1992-04-15 | ece       | 7503364998
+ ece101 | ankit raj     | male   | 1992-03-13 | ece       | 8271831014
+(8 rows)
+
+library=# alter table student add column dept_id int;
+ALTER TABLE
+library=# select *from student;
+ st_id  |    st_name    |  sex   |    dob     | dept_name |  contact   | dept_id 
+--------+---------------+--------+------------+-----------+------------+---------
+ cse101 | garima kumari | female | 1994-12-10 | cse       | 9431587963 |        
+ cse102 | aman gautam   | male   | 1994-01-10 | cse       |  966395746 |        
+ IT101  | aryan kr      | male   | 1994-02-16 | IT        | 9568324658 |        
+ cse103 | anand kr      | male   | 1994-03-28 | cse       | 9555114655 |        
+ cse104 | ganesh jee    | male   | 1995-01-31 | cse       | 7289903292 |        
+ eee101 | sneha         | female | 1993-02-26 | eee       | 8271831014 |        
+ me101  | jivesh verma  | male   | 1992-04-15 | ece       | 7503364998 |        
+ ece101 | ankit raj     | male   | 1992-03-13 | ece       | 8271831014 |        
+(8 row
+
+
+library=# update student set dept_id=1 where st_id='cse101';
+UPDATE 1
+library=# update student set dept_id=1 where st_id='cse102';
+UPDATE 1
+library=# update student set dept_id=2 where st_id='IT101';
+UPDATE 1
+library=# update student set dept_id=1 where st_id='cse103';
+UPDATE 1
+library=# update student set dept_id=1 where st_id='cse104';
+UPDATE 1
+library=# update student set dept_id=4 where st_id='eee101';
+UPDATE 1
+library=# update student set dept_id=5 where st_id='me101';
+UPDATE 1
+library=# update student set dept_id=3 where st_id='ece101';
+UPDATE 1
+
+
+
+library=# select * from student;
+ st_id  |    st_name    |  sex   |    dob     | dept_name |  contact   | dept_id 
+--------+---------------+--------+------------+-----------+------------+---------
+ cse101 | garima kumari | female | 1994-12-10 | cse       | 9431587963 |       1
+ cse102 | aman gautam   | male   | 1994-01-10 | cse       |  966395746 |       1
+ IT101  | aryan kr      | male   | 1994-02-16 | IT        | 9568324658 |       2
+ cse103 | anand kr      | male   | 1994-03-28 | cse       | 9555114655 |       1
+ cse104 | ganesh jee    | male   | 1995-01-31 | cse       | 7289903292 |       1
+ eee101 | sneha         | female | 1993-02-26 | eee       | 8271831014 |       4
+ me101  | jivesh verma  | male   | 1992-04-15 | ece       | 7503364998 |       5
+ ece101 | ankit raj     | male   | 1992-03-13 | ece       | 8271831014 |       3
+(8 rows)
+
+library=# alter table student drop column dept_name;
+ALTER TABLE
+library=# select * from student;
+ st_id  |    st_name    |  sex   |    dob     |  contact   | dept_id 
+--------+---------------+--------+------------+------------+---------
+ cse101 | garima kumari | female | 1994-12-10 | 9431587963 |       1
+ cse102 | aman gautam   | male   | 1994-01-10 |  966395746 |       1
+ IT101  | aryan kr      | male   | 1994-02-16 | 9568324658 |       2
+ cse103 | anand kr      | male   | 1994-03-28 | 9555114655 |       1
+ cse104 | ganesh jee    | male   | 1995-01-31 | 7289903292 |       1
+ eee101 | sneha         | female | 1993-02-26 | 8271831014 |       4
+ me101  | jivesh verma  | male   | 1992-04-15 | 7503364998 |       5
+ ece101 | ankit raj     | male   | 1992-03-13 | 8271831014 |       3
+(8 rows)
+
+library=# select * from borrower_details;
+ bo_id  | bo_book_id | issue_date | return_date | issued_id 
+--------+------------+------------+-------------+-----------
+ cse101 |          1 | 2016-11-07 | 2016-11-14  |         1
+ cse102 |          2 | 2016-08-08 | 2016-08-16  |         1
+ cse103 |          3 | 2016-09-07 | 2016-09-17  |         2
+ IT101  |          4 | 2016-09-07 | 2016-09-17  |         3
+(4 rows)
+
+library=# select * from book_details;
+ isbn |          title           | language | pub_id | actual_copy | current_copy | dept_id 
+------+--------------------------+----------+--------+-------------+--------------+---------
+    1 | head first               | english  |      1 |          20 |           15 |       1
+    2 | concept of c             | english  |      2 |          40 |           10 |       1
+    3 | java by e bala guruswami | english  |      1 |          40 |           10 |       1
+    4 | introduction of database | english  |      3 |          50 |           20 |       1
+    5 | concept of physics       | english  |      1 |          80 |           40 |       5
+    6 | circuit design           | english  |      2 |          70 |           30 |       4
+    7 | data structure by baluja | english  |      2 |          70 |           30 |       1
+    8 | NAAS                     | english  |      3 |          70 |           30 |       3
+(8 rows)
+
+
+
+INSERT 0 1
+library=# insert into borrower_details values('ece101',8,'2016-08-15','2016-08-25',1);
+INSERT 0 1
+library=# select * from borrower_details;
+ bo_id  | bo_book_id | issue_date | return_date | issued_id 
+--------+------------+------------+-------------+-----------
+ cse101 |          1 | 2016-11-07 | 2016-11-14  |         1
+ cse102 |          2 | 2016-08-08 | 2016-08-16  |         1
+ cse103 |          3 | 2016-09-07 | 2016-09-17  |         2
+ IT101  |          4 | 2016-09-07 | 2016-09-17  |         3
+ me101  |          5 | 2016-07-16 | 2016-07-25  |         1
+ eee101 |          6 | 2016-06-15 | 2016-06-30  |         3
+ cse104 |          7 | 2016-05-26 | 2016-06-15  |         2
+ ece101 |          8 | 2016-08-15 | 2016-08-25  |         1
+(8 rows)
+
+library=# select count(bo_book_id) from borrower_details;
+ count 
+-------
+     8
+(1 row)
+
+library=# select count(bo_book_id) from borrower_details where extract(month from issue_date) between 11 and 9;
+ count 
+-------
+     0
+(1 row)
+
+library=# select count(bo_book_id) from borrower_details where extract(month from issue_date)= between 11 and 9;
+ERROR:  syntax error at or near "11"
+LINE 1: ...ails where extract(month from issue_date)= between 11 and 9;
+                                                              ^
+library=# select count(bo_book_id) from borrower_details where extract(month from issue_date);
+ERROR:  argument of WHERE must be type boolean, not type double precision
+LINE 1: ...ect count(bo_book_id) from borrower_details where extract(mo...
+                                                             ^
+library=# select count(bo_book_id) from borrower_details where extract(month from issue_date)=11;
+ count 
+-------
+     1
+(1 row)
+
+library=# select count(bo_book_id) from borrower_details where extract(month from issue_date)=8
+library-# ;
+ count 
+-------
+     2
+(1 row)
+
+library=# select count(bo_book_id) from borrower_details where extract(month from issue_date) between 11 and 5;
+;
+ count 
+-------
+     0
+(1 row)
+
+library=# select count(bo_book_id) from borrower_details where extract(month from issue_date) between 5 and 11;
+;
+ count 
+-------
+     8
+(1 row)
+
+library=# select count(bo_book_id) from borrower_details where extract(month from issue_date) between 8 and 11;
+;
+ count 
+-------
+     5
+(1 row)
+
+library=# select count(bo_book_id) from borrower_details where extract(month from issue_date) in(11,10,9,8);
+ count 
+-------
+     5
+(1 row)
+
+library=# select count(bo_book_id) from borrower_details where extract(month from issue_date) in(11,10);
+ count 
+-------
+     1
+(1 row)
+
+
+
+library=# select s.st_name,s.dept_id,br.issue_date,br.return_date,b.title,d.dept_name from student s inner join borrower_details br on s.st_id=br.bo_id inner join book_details b on b.isbn=br.bo_id inner join department d on d.dept_id = b.dept_id;
+ERROR:  operator does not exist: integer = character varying
+LINE 1: ...st_id=br.bo_id inner join book_details b on b.isbn=br.bo_id ...
+                                                             ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+library=# select * from book_details;
+ isbn |          title           | language | pub_id | actual_copy | current_copy | dept_id 
+------+--------------------------+----------+--------+-------------+--------------+---------
+    1 | head first               | english  |      1 |          20 |           15 |       1
+    2 | concept of c             | english  |      2 |          40 |           10 |       1
+    3 | java by e bala guruswami | english  |      1 |          40 |           10 |       1
+    4 | introduction of database | english  |      3 |          50 |           20 |       1
+    5 | concept of physics       | english  |      1 |          80 |           40 |       5
+    6 | circuit design           | english  |      2 |          70 |           30 |       4
+    7 | data structure by baluja | english  |      2 |          70 |           30 |       1
+    8 | NAAS                     | english  |      3 |          70 |           30 |       3
+(8 rows)
+
+library=# select * from student;
+ st_id  |    st_name    |  sex   |    dob     |  contact   | dept_id 
+--------+---------------+--------+------------+------------+---------
+ cse101 | garima kumari | female | 1994-12-10 | 9431587963 |       1
+ cse102 | aman gautam   | male   | 1994-01-10 |  966395746 |       1
+ IT101  | aryan kr      | male   | 1994-02-16 | 9568324658 |       2
+ cse103 | anand kr      | male   | 1994-03-28 | 9555114655 |       1
+ cse104 | ganesh jee    | male   | 1995-01-31 | 7289903292 |       1
+ eee101 | sneha         | female | 1993-02-26 | 8271831014 |       4
+ me101  | jivesh verma  | male   | 1992-04-15 | 7503364998 |       5
+ ece101 | ankit raj     | male   | 1992-03-13 | 8271831014 |       3
+(8 rows)
+
+library=# select * from borrower_details;
+ bo_id  | bo_book_id | issue_date | return_date | issued_id 
+--------+------------+------------+-------------+-----------
+ cse101 |          1 | 2016-11-07 | 2016-11-14  |         1
+ cse102 |          2 | 2016-08-08 | 2016-08-16  |         1
+ cse103 |          3 | 2016-09-07 | 2016-09-17  |         2
+ IT101  |          4 | 2016-09-07 | 2016-09-17  |         3
+ me101  |          5 | 2016-07-16 | 2016-07-25  |         1
+ eee101 |          6 | 2016-06-15 | 2016-06-30  |         3
+ cse104 |          7 | 2016-05-26 | 2016-06-15  |         2
+ ece101 |          8 | 2016-08-15 | 2016-08-25  |         1
+(8 rows)
+
+library=# select * from department;
+ dept_id | dept_name 
+---------+-----------
+       1 | cse
+       2 | it
+       3 | ece
+       4 | eee
+       5 | me
+       6 | civil
+(6 rows)
+
+library=#  select s.st_name,br.issue_date,b.title,d.dept_name from student s inner join borrower_details br on s.st_id = br.bo_id inner join book b on br.bo_book_id = b.isbn inner join department d on b.dept_id = d.dept_id;
+ERROR:  relation "book" does not exist
+LINE 1: ...rower_details br on s.st_id = br.bo_id inner join book b on ...
+                                                             ^
+library=#  select s.st_name,br.issue_date,b.title,d.dept_name from student s inner join borrower_details br on s.st_id = br.bo_id inner join book_details b on br.bo_book_id = b.isbn inner join department d on b.dept_id = d.dept_id;
+    st_name    | issue_date |          title           | dept_name 
+---------------+------------+--------------------------+-----------
+ garima kumari | 2016-11-07 | head first               | cse
+ aman gautam   | 2016-08-08 | concept of c             | cse
+ anand kr      | 2016-09-07 | java by e bala guruswami | cse
+ aryan kr      | 2016-09-07 | introduction of database | cse
+ jivesh verma  | 2016-07-16 | concept of physics       | me
+ sneha         | 2016-06-15 | circuit design           | eee
+ ganesh jee    | 2016-05-26 | data structure by baluja | cse
+ ankit raj     | 2016-08-15 | NAAS                     | ece
+(8 rows)
+
+library=#  select s.st_name,br.issue_date,b.title,d.dept_name from student s inner join borrower_details br on s.st_id = br.bo_id inner join book_details b on br.bo_book_id = b.isbn inner join department d on b.dept_id = d.dept_id and s.st_id='cse101';
+    st_name    | issue_date |   title    | dept_name 
+---------------+------------+------------+-----------
+ garima kumari | 2016-11-07 | head first | cse
+(1 row)
+
+                                                             ^
+library=# select s.st_name,br.issue_date,br.return_date,st.staff_name,b.title,d.dept_name
+from student s inner join borrower_details br on s.st_id= br.bo_id inner join
+book_details b on b.isbn=br.bo_book_id inner join
+department d on d.dept_id = b.dept_id inner join 
+staff_details st on st.staff_id=br.issued_id;
+    st_name    | issue_date | return_date | staff_name |          title           | dept_name 
+---------------+------------+-------------+------------+--------------------------+-----------
+ garima kumari | 2016-11-07 | 2016-11-14  | sharma ji  | head first               | cse
+ aman gautam   | 2016-08-08 | 2016-08-16  | sharma ji  | concept of c             | cse
+ anand kr      | 2016-09-07 | 2016-09-17  | gupta ji   | java by e bala guruswami | cse
+ aryan kr      | 2016-09-07 | 2016-09-17  | shayma lal | introduction of database | cse
+ jivesh verma  | 2016-07-16 | 2016-07-25  | sharma ji  | concept of physics       | me
+ sneha         | 2016-06-15 | 2016-06-30  | shayma lal | circuit design           | eee
+ ganesh jee    | 2016-05-26 | 2016-06-15  | gupta ji   | data structure by baluja | cse
+ ankit raj     | 2016-08-15 | 2016-08-25  | sharma ji  | NAAS                     | ece
+(8 rows)
+
+library=# select s.st_name,br.issue_date,br.return_date,st.staff_name,b.title,d.dept_name
+from student s inner join borrower_details br on s.st_id= br.bo_id inner join
+book_details b on b.isbn=br.bo_book_id inner join
+department d on d.dept_id = b.dept_id inner join 
+staff_details st on st.staff_id=br.issued_id and s.st_id='cse101';
+    st_name    | issue_date | return_date | staff_name |   title    | dept_name 
+---------------+------------+-------------+------------+------------+-----------
+ garima kumari | 2016-11-07 | 2016-11-14  | sharma ji  | head first | cse
+(1 row)
+
+library=# select s.st_name,br.issue_date,br.return_date,st.staff_name,b.title,d.dept_name
+from student s inner join borrower_details br on s.st_id= br.bo_id inner join
+book_details b on b.isbn=br.bo_book_id inner join
+department d on d.dept_id = b.dept_id inner join 
+staff_details st on st.staff_id=br.issued_id and s.st_id='cse101';
+    st_name    | issue_date | return_date | staff_name |   title    | dept_name 
+---------------+------------+-------------+------------+------------+-----------
+ garima kumari | 2016-11-07 | 2016-11-14  | sharma ji  | head first | cse
+(1 row)
+
+
+library=# select return_date-issue_date as time from borrower_details;
+ time 
+------
+    7
+    8
+   10
+   10
+    9
+   15
+   20
+   10
+(8 rows)
+
+library=# select avg(return_date-issue_date) as time from borrower_details;
+        time         
+---------------------
+ 11.1250000000000000
+(1 row)
+
+
+library=# select s.st_name,br.issue_date,br.return_date,st.staff_name,b.title,d.dept_name
+from student s inner join borrower_details br on s.st_id= br.bo_id inner join
+book_details b on b.isbn=br.bo_book_id inner join
+department d on d.dept_id = b.dept_id inner join 
+staff_details st on st.staff_id=br.issued_id and extract(month from br.issue_date) in(11,10);
+    st_name    | issue_date | return_date | staff_name |   title    | dept_name 
+---------------+------------+-------------+------------+------------+-----------
+ garima kumari | 2016-11-07 | 2016-11-14  | sharma ji  | head first | cse
+(1 row)
+
+library=# select s.st_name,br.issue_date,br.return_date,st.staff_name,b.title,d.dept_name
+from student s inner join borrower_details br on s.st_id= br.bo_id inner join
+book_details b on b.isbn=br.bo_book_id inner join
+department d on d.dept_id = b.dept_id inner join 
+staff_details st on st.staff_id=br.issued_id and extract(month from br.issue_date) in(11,10,9);
+    st_name    | issue_date | return_date | staff_name |          title           | dept_name 
+---------------+------------+-------------+------------+--------------------------+-----------
+ garima kumari | 2016-11-07 | 2016-11-14  | sharma ji  | head first               | cse
+ anand kr      | 2016-09-07 | 2016-09-17  | gupta ji   | java by e bala guruswami | cse
+ aryan kr      | 2016-09-07 | 2016-09-17  | shayma lal | introduction of database | cse
+(3 rows)
+
+library=# select age(dob) from student;
+           age           
+-------------------------
+ 21 years 11 mons 6 days
+ 22 years 10 mons 6 days
+ 22 years 9 mons
+ 22 years 7 mons 19 days
+ 21 years 9 mons 16 days
+ 23 years 8 mons 18 days
+ 24 years 7 mons 1 day
+ 24 years 8 mons 3 days
+(8 rows)
+
+library=# 
+
+
+name of isued book by student id cse101?
+
+
+library=# select s.st_name,b.title from student s inner join borrower_details br on s.st_id = br.bo_id
+inner join book_details b on b.isbn=br.bo_book_id and s.st_id='cse101';
+    st_name    |          title           
+---------------+--------------------------
+ garima kumari | head first
+ garima kumari | java by e bala guruswami
+ garima kumari | introduction of database
+
+
+
+- fidn book title,department,time duration staff name which issued  and book publication of all male canditate which have issued the book'?
+
+
+library=# select s.st_name, b.title,p.pub_name,d.dept_name,br.return_date-br.issue_date as time_duration_days, st.staff_name from
+student s inner join borrower_details br on s.st_id =br.bo_id 
+inner join book_details b on b.isbn = br.bo_book_id
+inner join department d on d.dept_id = b.dept_id
+inner join publication_details p on p.pub_id = b.pub_id
+inner join staff_details st on st.staff_id =br.issued_id
+and s.sex ='male';
+   st_name    |          title           |    pub_name     | dept_name | time_duration_days | staff_name 
+--------------+--------------------------+-----------------+-----------+--------------------+------------
+ aman gautam  | concept of c             | GPB publication | cse       |                  8 | sharma ji
+ anand kr     | java by e bala guruswami | BPB publication | cse       |                 10 | gupta ji
+ aryan kr     | introduction of database | CPB publication | cse       |                 10 | verma ji
+ jivesh verma | concept of physics       | BPB publication | me        |                  9 | sharma ji
+ ganesh jee   | data structure by baluja | GPB publication | cse       |                 20 | gupta ji
+(5 rows)
+
+
+ how to clear screen in psql
+
+\! clear;
+
