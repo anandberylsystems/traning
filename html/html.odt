@@ -1,0 +1,113 @@
+HTML 
+
+
+HTML stands for Hypertext Markup Language
+
+
+html document structure:_
+
+Document declaration tag 
+<html>
+   <head>
+       Document header related tags
+   </head>
+
+   <body>
+       Document body related tags
+   </body>
+</html>
+
+
+<!DOCTYPE>
+The <!DOCTYPE> declaration tag is used by the web browser to understand the version of the HTML used in the document
+ Heading Tags
+html has 6 levels of headings.  H1,h2,h3,h4,h5,h6 here h1 is largest heaing tag and h6 is smallest head tags.
+
+Paragraph Tag
+
+<p> hi this is an  paragraph</p >
+
+
+<br /> = this is used for break the line.
+
+<center> = this is used to take any paragraph in between centre.
+
+<hr> =tag creates a line from the current position in the document to the right margin and breaks the line accordingly.
+
+<pre>...</pre> = Any text between the opening <pre> tag and the closing </pre> tag will preserve the formatting of the source document.
+
+style Attribute -The style attribute allows you to specify Cascading Style Sheet (CSS) rules within the element.
+
+   <p style="font-family:arial; color:#FF0000;">Some text...</p>
+
+<html dir="rtl"> = it indicates the browser left to right or right to left.
+
+<html dir="rtl"> =anything written beween <b>...</b> it appears as bold.
+<u>...</u> = anything written in between is shown as underlined.
+<i>.....</i> = anything written in between is shown as italic.
+ <strike>...</strike>  = anything written between strike its shown as crossed thin line. over sentences.
+
+<sup>...</sup> = it displayes half a character's height above the other characters.
+
+<sub>...</sub> = it displayes half a character's height below the other characters.
+
+<del>...</del> = anything witten in between this tag is shown as crossed.
+
+<big>...</big> = anything written in between shows as larger text.
+
+<small>...</small> = anything written in between these tag is shown as small tag.
+
+<span></span> = this tag is used to group together any part of sentences.
+<mark>...</mark>= anything written in between this tag is shown as marked.
+
+<strong>...</strong>  = shown as strong.
+
+<!-- ... -->  = html comments.
+
+<!--   This is valid comment -->
+
+< !--   This is not a valid comment --> because there is space between left angular bracket and exclamantion mark.
+
+<!-- 
+   document.write("Hello World!")    this will comment script code.
+//-->
+
+
+
+<!--
+.example {
+  border:1px solid #4a7d49;   this will comment css code.
+}
+//-->
+
+
+
+img src="/html/images/test.png" alt="Test Image" /> = alt image is necessary in case if image is not displayed. it will give an alternate message to  it.
+
+
+<img src="/html/images/test.png" alt="Test Image" width="150" height="100"/>  = it will set image height and width 
+
+
+<table cellapacing="#" cellpadding="#">......</table> = cellspacing attribute defines the width of the border. cellpadding represents the
+
+
+
+                                                      distance between cell borders and the content within a cell.
+
+
+
+<dl>
+<dt><b>HTML</b></dt>
+<dd>This stands for Hyper Text Markup Language</dd>
+<dt><b>HTTP</b></dt>
+<dd>This stands for Hyper Text Transfer Protocol</dd>
+</dl>                                                                 this will show the defination of HTML.
+
+
+
+ <ol type="i" start="4">
+   <li>Beetroot</li>
+   <li>Ginger</li>                                              this will show unorder list in order of i , j k, l , m, n
+   <li>Potato</li>
+   <li>Radish</li>
+ </ol>
