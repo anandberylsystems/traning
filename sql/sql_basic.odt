@@ -1111,7 +1111,118 @@ and s.sex ='male';
 (5 rows)
 
 
- how to clear screen in psql
+ 
+
+how to clear screen in psql
 
 \! clear;
+....................................................................................
+
+
+
+17 nov -2016
+
+
+how to see version of psql:_
+
+select version();
+
+
+
+find number of books borrowed by student?
+
+ select sum(actual_copy) - sum(current_copy) as borrowd_book from book_ details;
+
+find all the book of which publication id =1?
+
+select b.title from book_details b inner join publication_details p on p.pub_id = b.pub_id and p.pub_id=1;
+
+
+how to write case in-sensative query ?
+
+ select b.title from book_details b inner join publication_details p on p.pub_id = b.pub_id and lower(p.pub_name)= lower('bpb publication');..
+
+
+
+use of “ILIKE” to make query case insentative.
+
+library=# select b.title from book_details b inner join publication_details p on p.pub_id = b.pub_id and p.pub_name ILIKE 'bpb publication';
+
+
+
+find the name of book issued by staff_id group by staff_id and their contact numbers.
+
+ select st.staff_id,st.staff_contact, b.title from book_details b inner join borrower_details br on br.bo_book_id = b.isbn inner join staff_details st on st.staff_id = br.issued_id group by st.staff_id,b.title order by st.staff_id asc;
+ staff_id | staff_contact |          title           
+----------+---------------+--------------------------
+        1 |     954732145 | concept of c
+        1 |     954732145 | concept of physics
+        1 |     954732145 | head first
+        2 |     974699852 | data structure by baluja
+        2 |     974699852 | java by e bala guruswami
+        3 |    9874563210 | circuit design
+        3 |    9874563210 | introduction of database
+(7 rows)
+
+
+
+
+
+
+find number of book issued by staff whos id is 1?
+
+ select count(title) from (select st.staff_id,st.staff_contact, b.title from book_details b inner join borrower_details br on br.bo_book_id = b.isbn inner join staff_details st on st.staff_id = br.issued_id and st.staff_id=1) as table1;
+
+ count 
+-------
+     3
+
+
+find total number of book avilable of cse branch?
+
+ select b.title,b.current_copy from book_details b inner join department d on d.dept_id = b.dept_id and d.dept_name ILIKE 'CSE';          title           | current_copy 
+--------------------------+--------------
+ head first               |           15
+ concept of c             |           10
+ java by e bala guruswami |           10
+ introduction of database |           20
+ data structure by baluja |           30
+(5 rows)
+
+
+library=# select sum(current_copy) from (select b.title,b.current_copy from book_details b inner join department d on d.dept_id = b.dept_id and d.dept_name ILIKE 'CSE') as table1;
+ sum 
+-----
+  85
+(1 row)
+
+
+
+find the student name, contact and department who have issued the book 'concep of c'?
+
+select s.st_name,d.dept_name,s.contact from
+student s inner join borrower_details br on s.st_id =br.bo_id 
+inner join book_details b on b.isbn = br.bo_book_id
+inner join department d on d.dept_id = b.dept_id
+inner join publication_details p on p.pub_id = b.pub_id
+inner join staff_details st on st.staff_id =br.issued_id
+and b.title ILIKE 'concept of c';
+
+   st_name   | dept_name |  contact  
+-------------+-----------+-----------
+ aman gautam | cse       | 966395746
+
+
+
+find the list of students who have issued maximum number of books?
+
+
+library=#  select * from (select t.st_name,count(t.st_name) as abc from (select * from student s , borrower_details br where br.bo_id = s.st_id)as t group by t.st_name ) as j order by abc desc limit 1; 
+
+    st_name    | abc 
+---------------+-----
+ garima kumari |   3
+(1 row)
+//////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 
