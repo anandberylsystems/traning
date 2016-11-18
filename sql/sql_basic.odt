@@ -1225,4 +1225,62 @@ library=#  select * from (select t.st_name,count(t.st_name) as abc from (select 
 (1 row)
 //////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+find name of student and his branch?
 
+library=# select s.st_name, d.dept_name from student s inner join department d on s.dept_id = d.dept_id order by dept_name;
+
+    st_name    | dept_name 
+---------------+-----------
+ garima kumari | cse
+ aman gautam   | cse
+ anand kr      | cse
+ ganesh jee    | cse
+ ankit raj     | ece
+ sneha         | eee
+ aryan kr      | it
+ jivesh verma  | me
+(8 rows)
+
+ find number of student in each branch  by branch?
+
+library=# select count(s.st_name), d.dept_name from student s inner join department d on s.dept_id = d.dept_id group by dept_name order by dept_name;
+ count | dept_name 
+-------+-----------
+     4 | cse
+     1 | ece
+     1 | eee
+     1 | it
+     1 | me
+(5 rows)
+
+
+find name of student and issued book by them ?
+
+
+library=# select s.st_name,b.title from student s inner join borrower_details br on s.st_id = br.bo_id inner join book_details b on b.isbn= br.bo_book_id order by st_name;
+
+    st_name    |          title           
+---------------+--------------------------
+ aman gautam   | concept of c
+ anand kr      | java by e bala guruswami
+ aryan kr      | introduction of database
+ ganesh jee    | data structure by baluja
+ garima kumari | head first
+ garima kumari | java by e bala guruswami
+ garima kumari | introduction of database
+ jivesh verma  | concept of physics
+ sneha         | circuit design
+(9 rows)
+
+find name of student and no of book issued by him?
+library=# select s.st_name,count(b.title) from student s inner join borrower_details br on s.st_id = br.bo_id inner join book_details b on b.isbn= br.bo_book_id group by s.st_name order by s.st_name;
+    st_name    | count 
+---------------+-------
+ aman gautam   |     1
+ anand kr      |     1
+ aryan kr      |     1
+ ganesh jee    |     1
+ garima kumari |     3
+ jivesh verma  |     1
+ sneha         |     1
+(7 rows)

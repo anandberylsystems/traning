@@ -1,113 +1,94 @@
-HTML 
-
-
-HTML stands for Hypertext Markup Language
-
-
-html document structure:_
-
-Document declaration tag 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
-   <head>
-       Document header related tags
-   </head>
-
-   <body>
-       Document body related tags
-   </body>
-</html>
-
-
-<!DOCTYPE>
-The <!DOCTYPE> declaration tag is used by the web browser to understand the version of the HTML used in the document
- Heading Tags
-html has 6 levels of headings.  H1,h2,h3,h4,h5,h6 here h1 is largest heaing tag and h6 is smallest head tags.
-
-Paragraph Tag
-
-<p> hi this is an  paragraph</p >
-
-
-<br /> = this is used for break the line.
-
-<center> = this is used to take any paragraph in between centre.
-
-<hr> =tag creates a line from the current position in the document to the right margin and breaks the line accordingly.
-
-<pre>...</pre> = Any text between the opening <pre> tag and the closing </pre> tag will preserve the formatting of the source document.
-
-style Attribute -The style attribute allows you to specify Cascading Style Sheet (CSS) rules within the element.
-
-   <p style="font-family:arial; color:#FF0000;">Some text...</p>
-
-<html dir="rtl"> = it indicates the browser left to right or right to left.
-
-<html dir="rtl"> =anything written beween <b>...</b> it appears as bold.
-<u>...</u> = anything written in between is shown as underlined.
-<i>.....</i> = anything written in between is shown as italic.
- <strike>...</strike>  = anything written between strike its shown as crossed thin line. over sentences.
-
-<sup>...</sup> = it displayes half a character's height above the other characters.
-
-<sub>...</sub> = it displayes half a character's height below the other characters.
-
-<del>...</del> = anything witten in between this tag is shown as crossed.
-
-<big>...</big> = anything written in between shows as larger text.
-
-<small>...</small> = anything written in between these tag is shown as small tag.
-
-<span></span> = this tag is used to group together any part of sentences.
-<mark>...</mark>= anything written in between this tag is shown as marked.
-
-<strong>...</strong>  = shown as strong.
-
-<!-- ... -->  = html comments.
-
-<!--   This is valid comment -->
-
-< !--   This is not a valid comment --> because there is space between left angular bracket and exclamantion mark.
-
-<!-- 
-   document.write("Hello World!")    this will comment script code.
-//-->
-
-
-
-<!--
-.example {
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="created" content="0;0">
+	<meta name="changed" content="20161117;193203188568813">
+	<style type="text/css">
+	<!--
+		pre.cjk { font-family: "Droid Sans Fallback", monospace }
+	-->
+	</style>
+</head>
+<body lang="en-IN" dir="rtl" style="background: transparent">
+<p>HTML HTML stands for Hypertext Markup Language html document
+structure:_ Document declaration tag Document header related tags
+Document body related tags The declaration tag is used by the web
+browser to understand the version of the HTML used in the document
+Heading Tags html has 6 levels of headings. H1,h2,h3,h4,h5,h6 here h1
+is largest heaing tag and h6 is smallest head tags. Paragraph Tag 
+</p>
+<p>hi this is an paragraph</p>
+<p style="margin-bottom: 0cm"><br>= this is used for break the line. 
+</p>
+<p align="center" style="margin-bottom: 0cm">= this is used to take
+any paragraph in between centre. 
+</p>
+<hr>
+<p align="center">=tag creates a line from the current position in
+the document to the right margin and breaks the line accordingly. 
+</p>
+<pre class="western" align="center" style="margin-bottom: 0.5cm">...</pre>
+<p align="center">= Any text between the opening an</p>
+<pre class="western" align="center" style="margin-bottom: 0.5cm"> tag
+and the closing 
+</pre>
+<p align="center">tag will preserve the formatting of the source
+document. style Attribute -The style attribute allows you to specify
+Cascading Style Sheet (CSS) rules within the element. 
+</p>
+<p align="center"><font color="#ff0000"><font face="arial">Some
+text...</font></font></p>
+<p align="center">= it indicates the browser left to right or right
+to left. =anything written beween <b>...</b> it appears as bold. <u>...</u>
+= anything written in between is shown as underlined. <i>.....</i> =
+anything written in between is shown as italic. <strike>...</strike>
+= anything written between strike its shown as crossed thin line.
+over sentences. <sup>...</sup> = it displayes half a character's
+height above the other characters. <sub>...</sub> = it displayes half
+a character's height below the other characters. ... = anything
+witten in between this tag is shown as crossed. <font size="4" style="font-size: 14pt">...</font>
+= anything written in between shows as larger text. <font size="2" style="font-size: 10pt">...</font>
+= anything written in between these tag is shown as small tag. = this
+tag is used to group together any part of sentences. ...= anything
+written in between this tag is shown as marked. <strong>...</strong>
+= shown as strong.<!-- ... --> = html comments.<!-- This is valid comment -->
+&lt; !-- This is not a valid comment --&gt; because there is space
+between left angular bracket and exclamantion mark.<!-- document.write("Hello World!")    this will comment script code.
+//--><!-- .example {
   border:1px solid #4a7d49;   this will comment css code.
 }
 //-->
-
-
-
-img src="/html/images/test.png" alt="Test Image" /> = alt image is necessary in case if image is not displayed. it will give an alternate message to  it.
-
-
-<img src="/html/images/test.png" alt="Test Image" width="150" height="100"/>  = it will set image height and width 
-
-
-<table cellapacing="#" cellpadding="#">......</table> = cellspacing attribute defines the width of the border. cellpadding represents the
-
-
-
-                                                      distance between cell borders and the content within a cell.
-
-
-
-<dl>
-<dt><b>HTML</b></dt>
-<dd>This stands for Hyper Text Markup Language</dd>
-<dt><b>HTTP</b></dt>
-<dd>This stands for Hyper Text Transfer Protocol</dd>
-</dl>                                                                 this will show the defination of HTML.
-
-
-
- <ol type="i" start="4">
-   <li>Beetroot</li>
-   <li>Ginger</li>                                              this will show unorder list in order of i , j k, l , m, n
-   <li>Potato</li>
-   <li>Radish</li>
- </ol>
+img src=&quot;/html/images/test.png&quot; alt=&quot;Test Image&quot;
+/&gt; = alt image is necessary in case if image is not displayed. it
+will give an alternate message to it. 
+<img src="data:" name="Image1" align="bottom" width="150" height="100" border="0">
+= it will set image height and width ...... = cellspacing attribute
+defines the width of the border. cellpadding represents the distance
+between cell borders and the content within a cell. 
+</p>
+<dt align="center"><b>HTML</b> 
+</dt><dd align="center">
+This stands for Hyper Text Markup Language 
+</dd><dt align="center">
+<b>HTTP</b> 
+</dt><dd align="center" style="margin-bottom: 0.5cm">
+This stands for Hyper Text Transfer Protocol 
+</dd><p align="center">
+this will show the defination of HTML. 
+</p>
+<ol type="i" start="4">
+	<li><p align="center" style="margin-bottom: 0cm">Beetroot 
+	</p>
+	<li><p align="center" style="margin-bottom: 0cm">Ginger this will
+	show unorder list in order of i , j k, l , m, n 
+	</p>
+	<li><p align="center" style="margin-bottom: 0cm">Potato 
+	</p>
+	<li><p align="center">Radish 
+	</p>
+</ol>
+</body>
+</html>
