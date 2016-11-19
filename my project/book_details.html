@@ -1,0 +1,149 @@
+
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>@Book_details</title>
+
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--date picker javascript code start here-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<!-- Include Date Picker -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+<script>
+    $(document).ready(function(){
+        var date_input=$('input[name="date"]'); //our date input has the name "date"
+        var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+        date_input.datepicker({
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        })
+    })
+</script>
+<!--date picker javascript code end here-->
+  </head>
+  <body>
+     
+          <!--starting of navigation-->
+          <nav role="navigation" class="navbar navbar-inverse">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a href="#" class="navbar-brand">Library Management System</a>
+    </div>
+    
+</nav>
+          <!--end of navigation-->
+          
+          <!--start of form-->
+          <div class="container" style="margin-bottom: 100px">
+ <div class="row">
+  <div class="col-sm-7 col-sm-offset-2">
+          
+    <form class="form-horizontal">
+    <div class="form-group">
+        <label class="control-label col-xs-3" for="book_id">Book Id:</label>
+        <div class="col-xs-9">
+            <input type="text" class="form-control" id="book_id" placeholder="Enter ISBN of book">
+        </div>
+    </div>
+     <div class="form-group">
+        <label class="control-label col-xs-3" for="title">Book Title:</label>
+        <div class="col-xs-9">
+            <input type="text" class="form-control" id="title" placeholder="Enter Boook Title">
+        </div>
+    </div> 
+
+     <div class="form-group">
+        <label class="control-label col-xs-3" for="Language">Language:</label>
+        <div class="col-xs-9">
+            <input type="text" class="form-control" id="Language" placeholder="Enter Language used in Book">
+        </div>
+    </div>      
+     
+
+   <div class="form-group">
+     <label class="control-label col-xs-3" for="publication"> Publication Id:</label>
+     <div class="col-xs-9">
+     
+     <select class="form-control">
+       <option>Select Publication Of Book</option>
+       <option>BPP PUBLICATION</option>
+       <OPTION>GPB PUBLICATION</OPTION>
+       <option>SK PUBLICATION</option>
+     </select>
+     </div>
+   </div>
+        
+       <div class="form-group">
+        <label class="control-label col-xs-3" for="actual_copy">Actual Copy:</label>
+        <div class="col-xs-9">
+            <input type="text" class="form-control" id="actual_copy" placeholder="Enter Actual Copy Of Book">
+        </div>
+    </div> 
+    <div class="form-group">
+        <label class="control-label col-xs-3" for="current_copy">Current Copy:</label>
+        <div class="col-xs-9">
+            <input type="text" class="form-control" id="current_copy" placeholder="Enter CUrrent Copy">
+        </div>
+    </div> 
+    <div class="form-group">
+      <label class="control-label col-xs-3"> Department:</label>
+      <div class="col-xs-9">
+        <select class="form-control">
+          <option>Select Department Of Book</option>
+          <option>CSE</option>
+          <option>IT</option>
+          <option>ECE</option>
+          <option>EEE</option>
+          <option>ECE</option>
+          <option>ME</option>
+          <option>CIVIL</option>
+        </select>
+      </div>
+    </div>
+
+    <br>
+    <div class="form-group">
+        <div class="col-xs-offset-3 col-xs-9">
+            <input type="submit" class="btn btn-primary" value="Submit">
+            <input type="reset" class="btn btn-default" value="Reset">
+        </div>
+    </div>
+</form>
+          </div>
+              </div>       
+          </div>
+          <!--end of form-->
+          <!--fotter start-->
+          
+                   <nav role="navigation" class="navbar navbar-default navbar-fixed-bottom">
+                       <div class="container-fluid">
+                           <div class="text-center text-danger">
+                               &copy;Anand 2016
+                           </div> 
+                       </div>
+                   </nav>
+         
+          <!-- fotter end-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -5,20 +5,25 @@
 	<title></title>
 	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
 	<meta name="created" content="0;0">
-	<meta name="changed" content="20161117;193203188568813">
+	<meta name="changed" content="20161119;161429657741400">
 	<style type="text/css">
 	<!--
+		p { color: #000000 }
+		pre { color: #000000 }
 		pre.cjk { font-family: "Droid Sans Fallback", monospace }
+		dt { color: #000000 }
+		dd { color: #000000 }
 	-->
 	</style>
 </head>
-<body lang="en-IN" dir="rtl" style="background: transparent">
-<p>HTML HTML stands for Hypertext Markup Language html document
-structure:_ Document declaration tag Document header related tags
-Document body related tags The declaration tag is used by the web
-browser to understand the version of the HTML used in the document
-Heading Tags html has 6 levels of headings. H1,h2,h3,h4,h5,h6 here h1
-is largest heaing tag and h6 is smallest head tags. Paragraph Tag 
+<body lang="en-IN" text="#000000" dir="rtl" style="background: transparent">
+<p style="margin-right: -1.9cm">HTML HTML stands for Hypertext Markup
+Language html document structure:_ Document declaration tag Document
+header related tags Document body related tags The declaration tag is
+used by the web browser to understand the version of the HTML used in
+the document Heading Tags html has 6 levels of headings.
+H1,h2,h3,h4,h5,h6 here h1 is largest heaing tag and h6 is smallest
+head tags. Paragraph Tag 
 </p>
 <p>hi this is an paragraph</p>
 <p style="margin-bottom: 0cm"><br>= this is used for break the line. 
@@ -30,10 +35,10 @@ any paragraph in between centre.
 <p align="center">=tag creates a line from the current position in
 the document to the right margin and breaks the line accordingly. 
 </p>
-<pre class="western" align="center" style="margin-bottom: 0.5cm">...</pre>
+<pre class="western" style="margin-bottom: 0.5cm">...</pre>
 <p align="center">= Any text between the opening an</p>
-<pre class="western" align="center" style="margin-bottom: 0.5cm"> tag
-and the closing 
+<pre class="western" style="margin-bottom: 0.5cm"> tag</pre>
+<pre class="western" style="margin-bottom: 0.5cm">and the closing 
 </pre>
 <p align="center">tag will preserve the formatting of the source
 document. style Attribute -The style attribute allows you to specify
@@ -64,17 +69,17 @@ between left angular bracket and exclamantion mark.<!-- document.write("Hello Wo
 img src=&quot;/html/images/test.png&quot; alt=&quot;Test Image&quot;
 /&gt; = alt image is necessary in case if image is not displayed. it
 will give an alternate message to it. 
-<img src="data:" name="Image1" align="bottom" width="150" height="100" border="0">
+<img src="data:image/png;base64,iVBORw0KGgo=" name="Image1" align="bottom" width="150" height="100" border="0">
 = it will set image height and width ...... = cellspacing attribute
 defines the width of the border. cellpadding represents the distance
 between cell borders and the content within a cell. 
 </p>
-<dt align="center"><b>HTML</b> 
-</dt><dd align="center">
+<dt><b>HTML</b> 
+</dt><dd>
 This stands for Hyper Text Markup Language 
-</dd><dt align="center">
+</dd><dt>
 <b>HTTP</b> 
-</dt><dd align="center" style="margin-bottom: 0.5cm">
+</dt><dd style="margin-bottom: 0.5cm">
 This stands for Hyper Text Transfer Protocol 
 </dd><p align="center">
 this will show the defination of HTML. 

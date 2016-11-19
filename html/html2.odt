@@ -1,0 +1,23 @@
+﻿Colspan:- its is used to merge number of cell horizontaly.
+Rowspan:- it is used to merge number of cell vertically.
+Row span merge cell vertically from top to bottom.
+............................................................................
+
+html form tag is used to send multiple information in one- single button click.
+
+<form action”abc.html” method=”get/post”>
+</form>.
+
+
+
+
+Use the style attribute for styling HTML elements
+Use background-color for background color
+Use color for text colors
+Use font-family for text fonts
+Use font-size for text sizes
+Use text-align for text alignment
+
+<body style=”background-color:blude”></body>
+<h1 style=”color:black”></h1>
+<p style=”text-align:center”></p>

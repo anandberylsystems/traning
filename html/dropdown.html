@@ -1,0 +1,63 @@
+<html>
+	<head>
+		<title>
+			dropdown_menu
+		</title>
+		<style>
+			.dropbtn {
+               background-color: #4CAF50;
+               color: white;
+               padding: 16px;
+               font-size: 16px;
+               border: none;
+               cursor: pointer;
+                      }
+
+                      .dropdown {
+                       position: relative;
+                       display: inline-block;
+                                }
+
+
+                                .dropcontent {
+                                 display: none;
+                                 position: absolute;
+                                 background-color: #f9f9f9;
+                                 min-width: 160px;
+                                 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                                                    }
+
+                                                    .dropcontent a {
+                                                            color: black;
+                                                            padding: 12px 16px;
+                                                            text-decoration: none;
+                                                            display: block;
+                                                                     }
+
+                                                                     .dropcontent a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropcontent {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+
+		</style>
+
+	</head>
+	<body>
+		<h4>This is dropdown menu</h4>
+		<div class="dropdown">
+			<button class="dropbtn">click me</button>
+			<div class="dropcontent">
+				<a href="#"></a>
+				<a href="#"></a>
+				<a href="#"></a>
+				<a href="#"></a>
+			</div>
+		</div>
+	</body>
+</html>
