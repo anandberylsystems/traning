@@ -1,0 +1,48 @@
+
+<html>
+	<head>
+	<style>
+		table, th, td {
+			
+
+    border: 1px solid black;
+    border-collapse: collapse;
+
+      }
+      </style>
+
+	</head>
+	<body>
+		<center><h1>Books details</h1></center><hr><br/>
+		<table>
+			<tr>
+				<th> <h3>ID</h3></th>
+				<th><h3>TITLE</h3></th>
+				<th><h3>LANGUAGE</h3></th>
+				<th><h3>PUBLICATION ID</h3></th>
+				<th><h3>DEPARTMENT ID</h3></th>
+				<th><h3>ACTUAL COPY</h3></th>
+				<th><h3>CURRENT COPY</h3></th>
+				<th><h3>CREATED AT</h3></th>
+				<th><h3>UPDATED AT</h3></th>
+				
+			</tr>
+			<% @books.each do |i| %> 
+			<tr>
+				<td><%= i.id %></td>
+				<td><%= i.title %></td>
+				<td><%= i.language %></td>
+				<td><%= i.pubId %></td>
+				<td><%= i.deptId %></td>
+				<td><%= i.actual_copy %></td>
+				<td><%= i.current_copy %></td>
+				<td><%= i.created_at %></td>
+				<td><%= i.updated_at %></td>
+			</tr>
+			<% end %> 
+</table>
+<p align="right"> <%= link_to "home", "/" %> </p>
+	</body>
+</html>
+
+

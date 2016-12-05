@@ -1,0 +1,42 @@
+<html>
+	<head>
+	<style>
+		table, th, td {
+			
+
+    border: 1px solid black;
+    border-collapse: collapse;
+
+      }
+      </style>
+
+	</head>
+	<body>
+		<center><h1>Borrower Details</h1></center><hr/><br/>
+		<table>
+			<tr>
+				<th> <h3>ID</h3></th>
+				<th><h3>BOOK ID</h3></th>
+				<th><h3>RETURN DATE</h3></th>
+				<th><h3>ISSUED ID</h3></th>
+				<th><h3>STUDENT ID </h3></th>
+				<th><h3>CREATED AT</h3></th>
+				<th><h3>UPDATED AT</h3></th>
+				
+			</tr>
+			<% @borrowers.each do |i| %> 
+			<tr>
+				<td><%= i.id %></td>
+				<td><%= i.book_id %></td>
+				<td><%= i.return_date %></td>
+				<td><%= i.issued_id %></td>
+				<td><%= i.st_id %></td>
+				<td><%= i.created_at %></td>
+				<td><%= i.updated_at %></td>
+			</tr>
+			<% end %> 
+</table>
+<p align="right"> <%= link_to "home", "/" %> </p>
+	</body>
+</html>
+

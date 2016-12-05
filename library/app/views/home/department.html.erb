@@ -1,0 +1,39 @@
+
+<html>
+	<head>
+	<style>
+		table, th, td {
+			
+
+    border: 1px solid black;
+    border-collapse: collapse;
+
+      }
+      </style>
+
+	</head>
+	<body>
+		<center><h1>DEPARTMENT DETAILS</h1></center><hr/><br/>
+		<center>
+		<table>
+			<tr>
+				<th> <h3>ID</h3></th>
+				<th><h3>NAME</h3></th>
+				<th><h3>CREATED AT</h3></th>
+				<th><h3>UPDATED AT</h3></th>
+				
+			</tr>
+			<% @departments.each do |i| %> 
+			<tr>
+				<td><%= i.id %></td>
+				<td><%= i.name %></td>
+				<td><%= i.created_at %></td>
+				<td><%= i.updated_at %></td>
+			</tr>
+			<% end %> 
+</table>
+</center>
+<p align="right"> <%= link_to "home", "/" %> </p>
+	</body>
+</html>
+
