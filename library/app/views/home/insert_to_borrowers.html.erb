@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>insert_to_borrower_details</title>
+
+	</head>
+	<body>
+		<center><h1>Insert To Borrower Details</h1></center>
+		<center><form method="POST" action="/create_borrower">
+			<table>
+				<tr>
+					<td><label>Book Id</label></td>
+					<td><input type="text" name="book_id" placeholder="enter the book id"></td>
+				</tr>
+				<tr>
+					<td><label>Return Date</label></td>
+					<td><input type="text" name="return_date" placeholder="enter retrn Date"></td>
+				</tr>
+
+
+				<tr>
+				<td>Isued Id</td>
+				<td>
+					
+					<select name="issued_id">
+					<option value="" disabled="disabled" selected="selected">select your id</option>
+					<option value="1">shrma ji</option>
+					<option value="2">Gupta ji</option>
+					<option value="3">shula ji</option>
+					</select>
+				</td>
+				</tr>
+
+				<tr>
+					<td>Student Id</td>
+					<td><input type="text" name="st_id" placeholder="enter student id"></td>
+				</tr>
+				<tr>
+					<td>
+						<input type="submit" name="sub" value="Submit">
+					</td>
+				</tr>
+			</table>
+		</form></center>
+	</body>
+</html>

@@ -1,0 +1,71 @@
+<html>
+<head>
+	<title>insert books</title>
+</head>
+<body>
+	<center><h1> Insert Books </h1></center><hr>
+	<center>
+	<form action="/create_book" method="POST">
+		<table>
+			<tr>
+				<td><label>Title</label></td>
+				<td><input type="text" name="title" placeholder="enter book title"></td>
+			</tr>
+
+
+			<tr>
+				<td><label>Language</label></td>
+				<td><input type="text" name="language" placeholder="enter language of books"></td>
+			</tr>
+
+			<tr>
+				<td><label>PubId</label></td>
+				<td>
+					
+					<select name="dept_id">
+					    <option value="" disabled="disabled" selected="selected">SELECT ONE BRANCH</option>
+                        <option value="1">CSE</option>
+                        <option value="2">IT</option>
+                        <option value="3">ECE</option>
+                        <option value="4">EEE</option>
+                        <option value="5">ME</option>
+                        <option value="6">CIVIL</option>
+
+                    </select>
+				</td>
+			</tr>
+
+			<tr>
+				<td><label>DeptId</label></td>
+				<td>
+					<select name="pub_id">
+					    <option value="" disabled="disabled" selected="selected">SELECT ONE PUBLICATION</option>
+                        <option value="1">BPB</option>
+                        <option value="2">GPB</option>
+                        <option value="3">CPB</option>
+                       
+
+                    </select>
+				</td>
+			</tr>
+
+			<tr>
+				<td><label>Actual Copy</label></td>
+				<td><input type="text" name="actualcopy" placeholder="enter the actualcopy"></td>
+			</tr>
+
+			<tr>
+				<td><label>Current Copy</label></td>
+				<td><input type="text" name="currentcopy" placeholder="enter current copy of book"></td>
+			</tr>
+
+			<tr>
+			<td>
+				<input type="submit" name="sub" value="submit">
+				</td>
+			</tr>
+		</table>
+	</form>
+	<center>
+</body>
+</html>

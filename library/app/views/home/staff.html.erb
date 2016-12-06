@@ -14,6 +14,8 @@
 	</head>
 	<body>
 		<center><h1>STAFF DETAILS</h1></center><hr/><br/>
+		<p align="right"> <%= link_to "Insert into staffs", "insert_to_staffs" %> </p>
+
 		<center>
 		<table>
 			<tr>
@@ -22,6 +24,7 @@
 				<th><h3>CONTACT</h3></th>
 				<th><h3>CREATED AT</h3></th>
 				<th><h3>UPDATED AT</h3></th>
+
 				
 			</tr>
 			<% @staffs.each do |i| %> 
@@ -31,6 +34,7 @@
 				<td><%= i.contact %></td>
 				<td><%= i.created_at %></td>
 				<td><%= i.updated_at %></td>
+				<td><%= link_to "delete", "/delete_staff?id=#{i.id}", method: "DELETE"  %></td>
 			</tr>
 			<% end %> 
 </table>

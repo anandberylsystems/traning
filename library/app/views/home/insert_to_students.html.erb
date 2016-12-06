@@ -1,0 +1,83 @@
+<html>
+	<title>insert to students</title>
+	<head>
+		
+
+<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+<script>   
+    $(function() {
+         $( "#calendar" ).datepicker();   
+    }); 
+</script>
+    
+
+	</head>
+	<body>
+	<center><h3>INSERT STUDENTS INFO</h3></center><hr><br/>
+
+	<center>
+	
+
+	  <form action="/create_student" method="POST">
+	      <table>
+	        <tr>
+	          <td>
+		         <label>NAME</label>
+		      </td>
+		      <td>
+		         <input type="text" name="name" placeholder="enter your name">
+		      </td>
+            </tr>
+		
+            <tr>
+               <td>
+
+		         <label>SEX</label>
+	           </td>
+		       <td>
+			     <input type="radio" name="gender" value="male" checked> Male<br>
+                 <input type="radio" name="gender" value="female"> Female<br>
+               </td>
+             </tr>
+	
+
+        
+             <tr>
+               <td>
+                <label>DOB</label>
+                </td>
+               <td>
+                 <input type="text" id="calendar" name="dob"/>
+               </td>
+            </tr>
+            <tr>
+            <td>
+           <label>contact</label>
+           </td>
+           <td>
+             <input type="text" placeholder="enter your contact" name="contact">
+           </td>
+           </tr>
+           <tr>
+    
+          <td>
+            <label>Department Id</label>
+          </td>
+          <td>
+            <input type="text" placeholder="enter your Department id" name="deptid">
+          </td>
+          </tr>
+          <tr>
+         
+         </tr>
+        </table>
+        <input type="submit" name="sub" value="Submit"/>
+
+
+    
+
+
+     </form>
+      </center>
+       	</body>
+</html>
