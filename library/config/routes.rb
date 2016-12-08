@@ -41,6 +41,14 @@ Rails.application.routes.draw do
    get '/new_borrower', to: 'borrowers#new'
    post '/create_borrowers', to: 'borrowers#create'
 
+   #-------------publication--------
 
+   get '/new_publication', to: 'publication#new'
+   post'/create_publication', to: 'publication#create'
+
+   get '/show_edit', to: 'publication#edit'
+   put '/edit_publication', to:'publication#update'
+
+   delete '/delete_publication', to: 'publication#delete'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

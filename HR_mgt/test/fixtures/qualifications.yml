@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tenth: 9.99
+  intermediate: 9.99
+  graduation: MyString
+  passing_year: MyString
+  employee: one
+
+two:
+  tenth: 9.99
+  intermediate: 9.99
+  graduation: MyString
+  passing_year: MyString
+  employee: two

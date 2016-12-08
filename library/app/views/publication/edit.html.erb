@@ -1,0 +1,10 @@
+<center><h2>Edit Publication</h2></center><hr><br/>
+<center>
+<%= form_for @publication, url: "/edit_publication", method: :put do |publication| %>
+	<%= publication.hidden_field :id %>
+ <label>Publication Name: </label><%= publication.text_field :name %><br /><br />
+ 
+  
+ <%= publication.submit "Save Changes!" %><br/>
+<% end %>
+</center>

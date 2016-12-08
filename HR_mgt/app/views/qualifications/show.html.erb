@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tenth:</strong>
+  <%= @qualification.tenth %>
+</p>
+
+<p>
+  <strong>Intermediate:</strong>
+  <%= @qualification.intermediate %>
+</p>
+
+<p>
+  <strong>Graduation:</strong>
+  <%= @qualification.graduation %>
+</p>
+
+<p>
+  <strong>Passing year:</strong>
+  <%= @qualification.passing_year %>
+</p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @qualification.employee %>
+</p>
+
+<%= link_to 'Edit', edit_qualification_path(@qualification) %> |
+<%= link_to 'Back', qualifications_path %>

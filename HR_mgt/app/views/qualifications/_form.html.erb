@@ -1,0 +1,42 @@
+<%= form_for(qualification) do |f| %>
+  <% if qualification.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(qualification.errors.count, "error") %> prohibited this qualification from being saved:</h2>
+
+      <ul>
+      <% qualification.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tenth %>
+    <%= f.text_field :tenth %>
+  </div>
+
+  <div class="field">
+    <%= f.label :intermediate %>
+    <%= f.text_field :intermediate %>
+  </div>
+
+  <div class="field">
+    <%= f.label :graduation %>
+    <%= f.text_field :graduation %>
+  </div>
+
+  <div class="field">
+    <%= f.label :passing_year %>
+    <%= f.text_field :passing_year %>
+  </div>
+
+  <div class="field">
+    <%= f.label :employee_id %>
+    <%= f.text_field :employee_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
