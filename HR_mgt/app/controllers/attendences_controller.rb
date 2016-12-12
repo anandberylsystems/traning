@@ -21,7 +21,7 @@ class AttendencesController < ApplicationController
 
   # GET /attendences/1/edit
   def edit
-    @attendences = Attendence.all
+    #@attendences = Attendence.all
     @employees = Employee.all
   end
 

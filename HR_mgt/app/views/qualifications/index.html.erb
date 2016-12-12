@@ -21,7 +21,7 @@
         <td><%= qualification.intermediate %></td>
         <td><%= qualification.graduation %></td>
         <td><%= qualification.passing_year %></td>
-        <td><%= qualification.employee %></td>
+        <td><%= qualification.employee.name %></td>
         <td><%= link_to 'Show', qualification %></td>
         <td><%= link_to 'Edit', edit_qualification_path(qualification) %></td>
         <td><%= link_to 'Destroy', qualification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -32,4 +32,6 @@
 
 <br>
 
-<%= link_to 'New Qualification', new_qualification_path %>
+<%= link_to 'New Qualification ||', new_qualification_path %>
+
+

@@ -5,6 +5,7 @@ class EmployeesController < ApplicationController
   # GET /employees.json
   def index
     @employees = Employee.all
+
   end
 
   # GET /employees/1
@@ -20,13 +21,14 @@ class EmployeesController < ApplicationController
 
   # GET /employees/1/edit
   def edit
+    @departments = Department.all
   end
 
   # POST /employees
   # POST /employees.json
   def create
     @employee = Employee.new(employee_params)
-
+    @departments = Department.all
     respond_to do |format|
       if @employee.save
         format.html { redirect_to @employee, notice: 'Employee was successfully created.' }
@@ -41,6 +43,7 @@ class EmployeesController < ApplicationController
   # PATCH/PUT /employees/1
   # PATCH/PUT /employees/1.json
   def update
+    @departments = Department.all
     respond_to do |format|
       if @employee.update(employee_params)
         format.html { redirect_to @employee, notice: 'Employee was successfully updated.' }

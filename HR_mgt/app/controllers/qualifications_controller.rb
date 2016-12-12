@@ -15,16 +15,19 @@ class QualificationsController < ApplicationController
   # GET /qualifications/new
   def new
     @qualification = Qualification.new
+    @employees = Employee.all
   end
 
   # GET /qualifications/1/edit
   def edit
+    @employees = Employee.all
   end
 
   # POST /qualifications
   # POST /qualifications.json
   def create
     @qualification = Qualification.new(qualification_params)
+    @employees = Employee.all
 
     respond_to do |format|
       if @qualification.save
@@ -40,6 +43,7 @@ class QualificationsController < ApplicationController
   # PATCH/PUT /qualifications/1
   # PATCH/PUT /qualifications/1.json
   def update
+     @employees = Employee.all
     respond_to do |format|
       if @qualification.update(qualification_params)
         format.html { redirect_to @qualification, notice: 'Qualification was successfully updated.' }
